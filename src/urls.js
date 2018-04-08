@@ -7,7 +7,7 @@ export default [
     path: '/',
     exact: true,
     component: asyncComponent({
-      loader: () => import('./components/Home'), // required
+      loader: () => import('./containers/HomePage'), // required
       Placeholder: () => <div>...LOADING HOMEPAGE...</div>, // this is optional, just returns null by default
     }),
   },
@@ -15,8 +15,16 @@ export default [
     path: '/about',
     exact: true,
     component: asyncComponent({
-      loader: () => import('./components/About'), // required
+      loader: () => import('./containers/AboutPage'), // required
       Placeholder: () => <div>...LOADING ABOUTPAGE...</div>, // this is optional, just returns null by default
+    }),
+  },
+  {
+    path: '/counter',
+    exact: true,
+    component: asyncComponent({
+      loader: () => import('./containers/CounterPage'),
+      Placeholder: () => <div>...LOADING COUNTER...</div>,
     }),
   },
 ];

@@ -20,6 +20,9 @@ module.exports = {
     const extPlugin = require(require.resolve('extract-text-webpack-plugin'));
     config.plugins = config.plugins.filter((w) => !(w instanceof extPlugin));
 
+    // add ./src to module resolver so you can import modules with absolute path
+    config.resolve.modules.push('src');
+
     return config;
   },
 };
