@@ -11,12 +11,14 @@ class CustomDocument extends React.Component {
   static async getInitialProps({ assets, data, renderPage }) {
     // register the app
     const page = await renderPage();
-    AppRegistry.registerComponent('App', () => CustomDocument);
 
+    // react-native-web styles integration
+    AppRegistry.registerComponent('App', () => CustomDocument);
     const { getStyleElement } = AppRegistry.getApplication('App', {});
-    const rnwCss = renderToStaticMarkup(getStyleElement());
 
     // prerender rnw styles
+    const rnwCss = renderToStaticMarkup(getStyleElement());
+
     return { assets, data, ...page, rnwCss };
   }
 

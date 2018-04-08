@@ -27,7 +27,7 @@ server
       // Compile initial state
       const preloadedState = { counter };
 
-      // Create an ew Redux store instance
+      // Create a new Redux store instance
       const store = configureStore(preloadedState);
 
       // Grab the initial state from our Redux store
@@ -38,9 +38,8 @@ server
         return {
           html: renderToString(App),
           // Anything else you add here will be made available
-          // within getInitialProps(ctx)
+          // within document's this.props
           // e.g a redux store...
-          store,
           serverState,
         };
       };
