@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
 
+import './index.scss';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
@@ -19,7 +20,9 @@ class Home extends Component {
         <Text style={styles.text}>
           This is 'whatever' from getInitialProps: {this.props.whatever}
         </Text>
-        <Link to="/about">About -></Link>
+        <Link className="link" to="/about">
+          About ->
+        </Link>
         <Link to="/counter">Counter -></Link>
         <Link to="/counter?counter=100">Counter with 120 starting value-></Link>
       </View>

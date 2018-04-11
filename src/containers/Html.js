@@ -28,7 +28,6 @@ class CustomDocument extends React.Component {
     // get attributes from React Helmet
     const htmlAttrs = helmet.htmlAttributes.toComponent();
     const bodyAttrs = helmet.bodyAttributes.toComponent();
-
     return (
       <html {...htmlAttrs}>
         <head>
